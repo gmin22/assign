@@ -1,0 +1,19 @@
+//SLIP6
+import scala.collection.mutable.Set
+
+// Define the sets
+val set1: Set[Int] = Set(1, 2, 3, 4, 5)
+val set2: Set[Int] = Set(6, 7, 8, 9, 10)
+
+// Merge the sets
+val mergedSet: Set[Int] = set1 ++ set2
+
+// Calculate the sum of all integers in the merged set
+val sum: Int = mergedSet.sum
+
+// Display the sum
+println(s"The sum of all integers in the merged set is $sum")
+
+// Display the largest and smallest elements in the merged set
+println(s"The largest element in the merged set is ${mergedSet.max}")
+println(s"The smallest element in the merged set is ${mergedSet.min}")
