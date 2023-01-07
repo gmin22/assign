@@ -1,0 +1,13 @@
+//SLIP20
+val studentMap: Map[Int, (String, Int, Int)] = Map(
+  1 -> ("John", 80, 75),
+  2 -> ("Jane", 75, 80),
+  3 -> ("Bob", 70, 85),
+  4 -> ("Alice", 65, 90),
+  5 -> ("Mike", 60, 95)
+)
+
+val highestPercentage = studentMap.maxBy { case (_, (_, marks1, marks2)) => (marks1 + marks2) / 2.0 }
+val (rollNo, (name, marks1, marks2)) = highestPercentage
+val percentage = (marks1 + marks2) / 2.0
+println(s"$name has the highest percentage with $percentage%")

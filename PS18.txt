@@ -1,0 +1,12 @@
+//SLIP18
+object myObject 
+{ 
+	def main(args:Array[String]) 
+	{ 
+	    val colors = Array("Red", "Blue", "Black", "Green")
+	    println("This is an array of string :")
+	    for(i <- 0 to colors.length-1){
+	        println(colors(i))
+	    }
+	} 
+} 

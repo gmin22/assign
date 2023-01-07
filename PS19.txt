@@ -1,0 +1,11 @@
+//SLIP19
+import scala.util.Random
+
+// Create a list of 10 random numbers
+val randomNumbers = (1 to 10).map(_ => Random.nextInt(100))
+
+// Create a list from the members of the first list using the function 3n^2 + 4n + 6
+val transformedNumbers = randomNumbers.map(n => 3 * n * n + 4 * n + 6)
+
+// Display the second list in ascending order
+transformedNumbers.sorted.foreach(println)

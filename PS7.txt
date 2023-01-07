@@ -1,0 +1,23 @@
+//SLIP7
+object Scala_List
+{
+  def main(args: Array[String]): Unit = 
+ {
+   println("Scala List:")
+   println("List style:")
+   val list1 = List(1, 2, 3, 4, 5)
+   println(list1)
+   println("Java style:")
+   val list2 = List(1,2,3,4,5,6,7)
+   println(list2)
+   println("Fill style:")
+   val list3 = List.fill(5)(0)
+   println(list3)
+   println("Range List:")
+   val list4 = (1 to 5).toList
+   println(list4)
+   println("Tabulated List:")
+   val list5 = List.tabulate(5)(_ + 1)
+   println(list5)
+  }
+}
