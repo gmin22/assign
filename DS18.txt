@@ -1,0 +1,11 @@
+//DT SLIP18
+db.tours.insert({source: "Delhi", destination: "Agra", package: "Basic", cost: 1000, ratings: [4, 5, 3]})
+db.tours.insert({source: "Delhi", destination: "Agra", package: "Standard", cost: 2000, ratings: [5, 5, 4]})
+db.tours.insert({source: "Delhi", destination: "Agra", package: "Premium", cost: 3000, ratings: [3, 4, 5]})
+db.tours.insert({source: "Delhi", destination: "Shillong", package: "Basic", cost: 2500, ratings: [4, 5, 3]})
+db.tours.insert({source: "Delhi", destination: "Shillong", package: "Standard", cost: 3500, ratings: [5, 5, 4]})
+db.tours.insert({source: "Delhi", destination: "Shillong", package: "Premium", cost: 4500, ratings: [3, 4, 5]})
+db.tours.insert({source: "Delhi", destination: "Goa", package: "Basic", cost: 1500, ratings: [4, 5, 3]})
+db.tours.insert({source: "Delhi", destination: "Goa", package: "Standard", cost: 2500, ratings: [5, 5, 4]})
+db.tours.insert({source: "Delhi", destination: "Goa", package: "Premium", cost: 3500, ratings: [3, 4, 5]})
+db.tours.insert({source: "Delhi", destination: "Manali", package: "Basic

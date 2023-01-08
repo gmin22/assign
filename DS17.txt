@@ -1,0 +1,18 @@
+//DT SLIP17
+db.mobiles.insert({model: "Samsung J6", brand: "Samsung", RAM: 3, ROM: 32, rating: 4})
+db.mobiles.insert({model: "Samsung J7", brand: "Samsung", RAM: 3, ROM: 32, rating: 3})
+db.mobiles.insert({model: "Samsung J8", brand: "Samsung", RAM: 4, ROM: 64, rating: 5})
+db.mobiles.insert({model: "iPhone 7", brand: "Apple", RAM: 3, ROM: 32, rating: 4})
+db.mobiles.insert({model: "iPhone 7plus", brand: "Apple", RAM: 3, ROM: 32, rating: 5})
+db.mobiles.insert({model: "iPhone 8", brand: "Apple", RAM: 3, ROM: 64, rating: 3})
+db.mobiles.insert({model: "Mi A1", brand: "Xiaomi", RAM: 4, ROM: 64, rating: 4})
+db.mobiles.insert({model: "Mi A2", brand: "Xiaomi", RAM: 4, ROM: 64, rating: 5})
+db.mobiles.insert({model: "Mi A3", brand: "Xiaomi", RAM: 4, ROM: 128, rating: 3})
+db.mobiles.insert({model: "OnePlus 6", brand: "OnePlus", RAM: 6, ROM: 64, rating: 5})
+
+db.brands.insert({name: "Samsung", rating: 4})
+db.brands.insert({name: "Apple", rating: 4})
+db.brands.insert({name: "Xiaomi", rating: 4})
+db.brands.insert({name: "OnePlus", rating: 5})
+
+db.customers.insert({name: "Alice", mobiles: ["Samsung J6", "iPhone 7"], brand_ratings: [{brand: "Samsung", rating: 5}, {brand: "Apple", rating: 4

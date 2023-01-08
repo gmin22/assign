@@ -1,0 +1,26 @@
+//DT SLIP12
+db.universities.insert({name: "University of California, Berkeley", location: "Berkeley, California, USA", colleges: ["College of Engineering", "College of Letters and Science"]})
+db.universities.insert({name: "Massachusetts Institute of Technology", location: "Cambridge, Massachusetts, USA", colleges: ["School of Engineering", "School of Science"]})
+
+db.colleges.insert({name: "College of Engineering", courses: ["Computer Science", "Mechanical Engineering", "Electrical Engineering"], professors: ["Professor A", "Professor B", "Professor C"]})
+db.colleges.insert({name: "College of Letters and Science", courses: ["Economics", "Political Science", "Psychology"], professors: ["Professor D", "Professor E", "Professor F"]})
+db.colleges.insert({name: "School of Engineering", courses: ["Computer Science", "Aerospace Engineering", "Chemical Engineering"], professors: ["Professor G", "Professor H", "Professor I"]})
+db.colleges.insert({name: "School of Science", courses: ["Biology", "Physics", "Chemistry"], professors: ["Professor J", "Professor K", "Professor L"]})
+
+db.courses.insert({name: "Computer Science", college: "College of Engineering"})
+db.courses.insert({name: "Mechanical Engineering", college: "College of Engineering"})
+db.courses.insert({name: "Electrical Engineering", college: "College of Engineering"})
+db.courses.insert({name: "Economics", college: "College of Letters and Science"})
+db.courses.insert({name: "Political Science", college: "College of Letters and Science"})
+db.courses.insert({name: "Psychology", college: "College of Letters and Science"})
+db.courses.insert({name: "Aerospace Engineering", college: "School of Engineering"})
+db.courses.insert({name: "Chemical Engineering", college: "School of Engineering"})
+db.courses.insert({name: "Biology", college: "School of Science"})
+db.courses.insert({name: "Physics", college: "School of Science"})
+db.courses.insert({name: "Chemistry", college: "School of Science"})
+
+db.professors.insert({name: "Professor A", age: 45, colleges: ["College of Engineering"]})
+db.professors.insert({name: "Professor B", age: 50, colleges: ["College of Engineering"]})
+db.professors.insert({name: "Professor C", age: 35, colleges: ["College of Engineering"]})
+db.professors.insert({name: "Professor D", age: 40, colleges: ["College of Letters and Science"]})
+db.professors.insert({name

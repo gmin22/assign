@@ -1,0 +1,21 @@
+//DT SLIP13
+db.products.insert({name: "Shampoo", description: "For clean and healthy hair", price: 5})
+db.products.insert({name: "Toothpaste", description: "For fresh breath and clean teeth", price: 3})
+db.products.insert({name: "Soap", description: "For clean and refreshed skin", price: 2})
+db.products.insert({name: "Laptop", description: "For computing and internet access", price: 1000})
+db.products.insert({name: "Smartphone", description: "For communication and entertainment", price: 500})
+
+db.customers.insert({name: "Alice", email: "alice@example.com", phone: "123-456-7890"})
+db.customers.insert({name: "Bob", email: "bob@example.com", phone: "234-567-8901"})
+db.customers.insert({name: "Charlie", email: "charlie@example.com", phone: "345-678-9012"})
+db.customers.insert({name: "Dave", email: "dave@example.com", phone: "456-789-0123"})
+db.customers.insert({name: "Eve", email: "eve@example.com", phone: "567-890-1234"})
+
+db.orders.insert({customer: "Alice", items: [{product: "Shampoo", quantity: 2}, {product: "Toothpaste", quantity: 3}], total: 11, processed: true})
+db.orders.insert({customer: "Bob", items: [{product: "Soap", quantity: 5}, {product: "Laptop", quantity: 1}], total: 1007, processed: true})
+db.orders.insert({customer: "Charlie", items: [{product: "Smartphone", quantity: 2}, {product: "Soap", quantity: 10}], total: 1010, processed: true})
+db.orders.insert({customer: "Dave", items: [{product: "Shampoo", quantity: 3}, {product: "Toothpaste", quantity: 1}, {product: "Smartphone", quantity: 1}], total: 509, processed: true})
+db.orders.insert({customer: "Eve", items: [{product: "Laptop", quantity: 1}, {product: "Smartphone", quantity: 1}, {product: "Soap", quantity: 5}], total: 1507, processed: false})
+
+db.invoices.insert({order: "Alice", date: new Date("2022-01-01"), total: 11})
+db.invoices.insert({order: "Bob", date: new Date

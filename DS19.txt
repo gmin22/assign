@@ -1,0 +1,15 @@
+//DT SLip19
+Brands:
+
+{ "name": "L'Oreal", "description": "A leading cosmetics brand known for its high-quality skincare and makeup products", "products": ["Revitalift Moisturizer", "True Match Foundation"] }
+{ "name": "Maybelline", "description": "A popular cosmetics brand known for its affordable and trendy makeup products", "products": ["Falsies Mascara", "Dream BB Cream"] }
+Products:
+
+{ "name": "Revitalift Moisturizer", "description": "A anti-aging facial moisturizer that helps to reduce the appearance of wrinkles and fine lines", "brand": "L'Oreal", "price": "$30", "reviews": [{"customer": "Jane Doe", "rating": 4, "review": "I've been using this moisturizer for a few months now and have noticed a significant improvement in the appearance of my wrinkles. It's a bit on the pricey side, but worth it for the results."}] }
+{ "name": "True Match Foundation", "description": "A liquid foundation that provides medium coverage and a natural finish", "brand": "L'Oreal", "price": "$15", "reviews": [{"customer": "John Smith", "rating": 5, "review": "I love this foundation! It blends seamlessly into my skin and gives me the perfect amount of coverage. I've tried a lot of different foundations and this one is definitely my favorite."}] }
+Customers:
+
+{ "name": "Jane Doe", "contact": "jane.doe@gmail.com", "purchases": ["Revitalift Moisturizer"] }
+{ "name": "John Smith", "contact": "john.smith@gmail.com", "purchases": ["True Match Foundation"] }
+
+
