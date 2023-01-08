@@ -1,0 +1,34 @@
+//DT Slip3
+CREATE (c1:Country {name: "India"})
+CREATE (c2:Country {name: "USA"})
+CREATE (c3:Country {name: "China"})
+CREATE (c4:Country {name: "Russia"})
+
+CREATE (s1:State {name: "Maharashtra"})
+CREATE (s2:State {name: "Gujarat"})
+CREATE (s3:State {name: "Kerala"})
+CREATE (s4:State {name: "Tamil Nadu"})
+
+CREATE (p1:Product {name: "Oil", production_percentage: 80.0})
+CREATE (p2:Product {name: "Sugarcane", production_percentage: 75.0})
+CREATE (p3:Product {name: "Rice", production_percentage: 55.0})
+CREATE (p4:Product {name: "Wheat", production_percentage: 65.0})
+CREATE (p5:Product {name: "Corn", production_percentage: 85.0})
+
+CREATE (p1)-[:PRODUCED_IN]->(s1)
+CREATE (p2)-[:PRODUCED_IN]->(s2)
+CREATE (p3)-[:PRODUCED_IN]->(s3)
+CREATE (p4)-[:PRODUCED_IN]->(s4)
+CREATE (p5)-[:PRODUCED_IN]->(s1)
+
+CREATE (p1)-[:PRODUCED_BY]->(c1)
+CREATE (p2)-[:PRODUCED_BY]->(c1)
+CREATE (p3)-[:PRODUCED_BY]->(c1)
+CREATE (p4)-[:PRODUCED_BY]->(c1)
+CREATE (p5)-[:PRODUCED_BY]->(c1)
+CREATE (p1)-[:PRODUCED_BY]->(c2)
+CREATE (p2)-[:PRODUCED_BY]->(c2)
+CREATE (p3)-[:PRODUCED_BY]->(c2)
+CREATE (p4)-[:PRODUCED_BY]->(c2)
+CREATE (p5)-[:PRODUCED_BY]->(c2)
+CREATE (

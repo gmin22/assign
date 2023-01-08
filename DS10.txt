@@ -1,0 +1,21 @@
+//DT SLIP10
+CREATE (u:University {name: 'XYZ University', location: 'Pune'})-[:OFFERS]->(d1:Department {name: 'Chemistry'})
+CREATE (u)-[:OFFERS]->(d2:Department {name: 'Zoology'})
+CREATE (u)-[:OFFERS]->(d3:Department {name: 'Computer Science'})
+CREATE (d1)-[:CONDUCTED_BY]->(c1:Course {name: 'Organic Chemistry', credits: 3})
+CREATE (d1)-[:CONDUCTED_BY]->(c2:Course {name: 'Physical Chemistry', credits: 3})
+CREATE (d2)-[:CONDUCTED_BY]->(c3:Course {name: 'Animal Behavior', credits: 3})
+CREATE (d3)-[:CONDUCTED_BY]->(c4:Course {name: 'Software Engineering', credits: 4})
+CREATE (c1)<-[:CONDUCTED_BY]-(d2)
+CREATE (c2)<-[:CONDUCTED_BY]-(d2)
+CREATE (p1:Person {name: 'Jane Doe'})-[:RECOMMENDED]->(c1)
+CREATE (p2:Person {name: 'John Doe'})-[:RECOMMENDED]->(c4)
+
+1.MATCH (d:Department {name: 'Chemistry'})-[:CONDUCTED_BY]->(c:Course)
+RETURN c.name
+
+2.MATCH (u:University)-[:OFFERS]->(d:Department)
+RETURN d.name
+
+3.MATCH (d1:Department {name: 'Chemistry'})-[:CONDUCTED_BY]->(c:Course)<-[:CONDUCTED_BY]-(d2:Department {name: 'Zoology'})
+RETURN c.name

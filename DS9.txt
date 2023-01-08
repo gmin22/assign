@@ -1,0 +1,24 @@
+//DT SLIP9
+CREATE (a:Automobile {name: 'ABC Industry', location: 'Pune'})-[:MANUFACTURES]->(vt1:VehicleType {characteristics: 'Heavy, high capacity'})
+CREATE (a)-[:MANUFACTURES]->(vt2:VehicleType {characteristics: 'Light, fuel efficient'})
+CREATE (c1:Customer {name: 'Jane Doe'})-[:BUYS]->(vt2)
+CREATE (c2:Customer {name: 'John Doe'})-[:BUYS]->(vt1)
+CREATE (c3:Customer {name: 'Bob Smith'})-[:BUYS]->(vt1)<-[:BUYS]-(c3)-[:BUYS]->(vt2)
+CREATE (p1:Person {name: 'Sarah Johnson'})-[:RECOMMENDS]->(vt1)
+CREATE (p2:Person {name: 'Mike Williams'})-[:RECOMMENDS]->(vt2)
+
+1.MATCH (:Automobile)-[:MANUFACTURES]->(vt:VehicleType)
+WHERE vt.characteristics CONTAINS 'Heavy'
+RETURN vt.characteristics
+
+2.MATCH (c:Customer)-[:BUYS]->(vt:VehicleType)
+WHERE vt.characteristics CONTAINS 'Light'
+RETURN c.name
+
+3.MATCH (c:Customer)-[:BUYS]->(:VehicleType)<-[:BUYS]-(c)
+RETURN c.name
+
+4.MATCH (p:Person)-[r:RECOMMENDS]->(vt:VehicleType)
+RETURN vt.characteristics, COUNT(r) as recommendation_count
+ORDER BY recommendation_count DESC
+LIMIT 1

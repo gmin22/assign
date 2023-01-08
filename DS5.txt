@@ -1,0 +1,49 @@
+//DT SLIP5
+High level Graph model:
+
+(Mall) <-- (Section:Type) <-- (Brand) <-- (Apparel:Type, Size) <-- (SalesStaff)
+
+Create nodes and relationships:
+CREATE
+(mall:Mall),
+(male_section:Section {type: "male"}),
+(female_section:Section {type: "female"}),
+(kids_section:Section {type: "kids"}),
+
+(brand1:Brand {name: "Brand 1"}),
+(brand2:Brand {name: "Brand 2"}),
+(brand3:Brand {name: "Brand 3"}),
+
+(apparel1:Apparel {type: "shirt", size: "S"}),
+(apparel2:Apparel {type: "shirt", size: "M"}),
+(apparel3:Apparel {type: "shirt", size: "L"}),
+(apparel4:Apparel {type: "shirt", size: "XL"}),
+(apparel5:Apparel {type: "shirt", size: "XXL"}),
+(apparel6:Apparel {type: "trousers", size: "S"}),
+(apparel7:Apparel {type: "trousers", size: "M"}),
+(apparel8:Apparel {type: "trousers", size: "L"}),
+(apparel9:Apparel {type: "trousers", size: "XL"}),
+(apparel10:Apparel {type: "trousers", size: "XXL"}),
+
+(salesstaff1:SalesStaff {name: "Jane"}),
+(salesstaff2:SalesStaff {name: "John"}),
+(salesstaff3:SalesStaff {name: "Mary"}),
+(salesstaff4:SalesStaff {name: "Peter"})
+
+CREATE
+(mall)-[:HAS_SECTION]->(male_section),
+(mall)-[:HAS_SECTION]->(female_section),
+(mall)-[:HAS_SECTION]->(kids_section),
+
+(male_section)-[:CONTAINS]->(brand1),
+(male_section)-[:CONTAINS]->(brand2),
+(male_section)-[:CONTAINS]->(brand3),
+(female_section)-[:CONTAINS]->(brand1),
+(female_section)-[:CONTAINS]->(brand2),
+(female_section)-[:CONTAINS]->(brand3),
+(kids_section)-[:CONTAINS]->(brand1),
+(kids_section)-[:CONTAINS]->(brand2),
+(kids_section)-[:CONTAINS]->(brand3),
+
+(brand1)-[:HAS_APPAREL]->(apparel1),
+(brand1)-

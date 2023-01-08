@@ -1,0 +1,56 @@
+//DT SLIP7
+High level Graph model:
+
+(Hospital:Specialization) <-- (Person:Review) <-- (Recommendation)
+|
+v
+(Doctor:Visit)
+
+Create nodes and relationships:
+CREATE
+(hospital1:Hospital {name: "Hospital 1", specialization: ["Pediatric"]}),
+(hospital2:Hospital {name: "Hospital 2", specialization: ["Gynaec"]}),
+(hospital3:Hospital {name: "Hospital 3", specialization: ["Orthopaedic"]}),
+(hospital4:Hospital {name: "Jehangir Hospital", specialization: ["Pediatric", "Gynaec", "Orthopaedic"]}),
+
+(person1:Person {name: "Alice"}),
+(person2:Person {name: "Bob"}),
+(person3:Person {name: "Charlie"}),
+(person4:Person {name: "David"}),
+(person5:Person {name: "Eve"}),
+
+(doctor1:Doctor {name: "Doctor 1", visit: ["Monday"]}),
+(doctor2:Doctor {name: "Doctor 2", visit: ["Tuesday", "Wednesday"]}),
+(doctor3:Doctor {name: "Doctor 3", visit: ["Monday", "Wednesday"]}),
+(doctor4:Doctor {name: "Doctor 4", visit: ["Tuesday", "Friday"]}),
+
+(review1:Review),
+(review2:Review),
+(review3:Review),
+(review4:Review),
+(review5:Review),
+
+(recommendation1:Recommendation),
+(recommendation2:Recommendation),
+(recommendation3:Recommendation),
+(recommendation4:Recommendation),
+(recommendation5:Recommendation)
+
+CREATE
+(hospital1)-[:RECOMMENDED_BY {rating: 5}]->(person1),
+(hospital1)-[:RECOMMENDED_BY {rating: 4}]->(person2),
+(hospital1)-[:RECOMMENDED_BY {rating: 3}]->(person3),
+(hospital2)-[:RECOMMENDED_BY {rating: 4}]->(person4),
+(hospital2)-[:RECOMMENDED_BY {rating: 3}]->(person5),
+(hospital3)-[:RECOMMENDED_BY {rating: 5}]->(person1),
+(hospital3)-[:RECOMMENDED_BY {rating: 4}]->(person2),
+(hospital4)-[:RECOMMENDED_BY {rating: 5}]->(person3),
+(hospital4)-[:RECOMMENDED_BY {rating: 4}]->(person4),
+(hospital5)-[:RECOMMENDED_BY {rating: 3}]->(person5),
+(hospital5)-[:RECOMMENDED_BY {rating: 2}]->(person1),
+
+(person1)-[:PROVIDED]->(review1),
+(person2
+
+
+
