@@ -1,0 +1,103 @@
+
+neo4j/eleven.txt
+slip11
+q1
+create(a1:person{name:"nikita",age:20})
+create(a2:person{name:"rahul",age:22})
+create(a1)-[:frind_of]->(a2)
+create(a2)-[:frind_of]->(a1)
+create(a3:sibling{name:"mayur",age:16})
+create(a3)-[:brother_of]->(a1)
+create(a4:parent{name:"sanjay",age:40})
+create(a4)-[:father_of]->(a1)
+create(a5:city{name:"mumbai"})
+create(a6:city{name:"pune"})
+create(a7:city{name:"kolhapur"})
+create(a1)-[:lives_in]->(a5)
+create(a8:project{name:"finance"})
+create(a9:project{name:"sales"})
+create(a10:project{name:"inventory"})
+create(a1)-[:works_in]->(a8)
+create(a1)-[:works_in]->(a9)
+with a1,a2,a3,a4,a5,a6,a7,a8,a9,a10
+match(parent:parent)
+return(parent)
+q2
+create(a1:person{name:"nikita",age:20})
+create(a2:person{name:"rahul",age:22})
+create(a1)-[:frind_of]->(a2)
+create(a2)-[:frind_of]->(a1)
+create(a3:sibling{name:"mayur",age:16})
+create(a3)-[:brother_of]->(a1)
+create(a4:parent{name:"sanjay",age:40})
+create(a4)-[:father_of]->(a1)
+create(a5:city{name:"mumbai"})
+create(a6:city{name:"pune"})
+create(a7:city{name:"kolhapur"})
+create(a1)-[:lives_in]->(a5)
+create(a8:project{name:"finance"})
+create(a9:project{name:"sales"})
+create(a10:project{name:"inventory"})
+create(a1)-[:works_in]->(a8)
+create(a1)-[:works_in]->(a9)
+with a1,a2,a3,a4,a5,a6,a7,a8,a9,a10
+MATCH (:project{ name: 'finance' })<-[:works_in]-(person)
+RETURN person.name
+
+
+
+
+
+q3
+create(a1:person{name:"nikita",age:20})
+create(a2:person{name:"rahul",age:22})
+create(a1)-[:frind_of]->(a2)
+create(a2)-[:frind_of]->(a1)
+create(a3:sibling{name:"mayur",age:16})
+create(a3)-[:brother_of]->(a1)
+create(a4:parent{name:"sanjay",age:40})
+create(a4)-[:father_of]->(a1)
+create(a5:city{name:"mumbai"})
+create(a6:city{name:"pune"})
+create(a7:city{name:"kolhapur"})
+create(a2)-[:lives_in]->(a5)
+create(a2)-[:lives_in]->(a6)
+create(a1)-[:lives_in]->(a5)
+create(a8:project{name:"finance"})
+create(a9:project{name:"sales"})
+create(a10:project{name:"inventory"})
+create(a1)-[:works_in]->(a8)
+create(a1)-[:works_in]->(a9)
+with a1,a2,a3,a4,a5,a6,a7,a8,a9,a10
+MATCH (:city{ name: 'mumbai' })<-[:lives_in]-(person)
+RETURN person.name
+
+
+q4
+
+
+create(a1:person{name:"nikita",age:20})
+create(a2:person{name:"rahul",age:22})
+create(a1)-[:frind_of]->(a2)
+create(a2)-[:frind_of]->(a1)
+create(a3:sibling{name:"mayur",age:16})
+create(a3)-[:brother_of]->(a1)
+create(a4:parent{name:"sanjay",age:40})
+create(a11:parent{name:"radha",age:35})
+create(a11)-[:mother_of]->(a1)
+create(a4)-[:father_of]->(a1)
+create(a5:city{name:"mumbai"})
+create(a6:city{name:"pune"})
+create(a7:city{name:"kolhapur"})
+create(a2)-[:lives_in]->(a5)
+create(a2)-[:lives_in]->(a6)
+create(a1)-[:lives_in]->(a5)
+create(a8:project{name:"finance"})
+create(a9:project{name:"sales"})
+create(a10:project{name:"inventory"})
+create(a1)-[:works_in]->(a8)
+create(a1)-[:works_in]->(a9)
+with a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11
+MATCH (:person)<-[:mother_of]-(person)
+RETURN person.name
+

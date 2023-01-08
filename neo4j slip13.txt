@@ -1,0 +1,171 @@
+neo4j
+slip13
+
+
+query 1:
+create(a1:cunt{name:"india"})
+create(a2:cunt{name:"usa"})
+create(a3:cunt{name:"iraq"})
+create(a4:state{name:"maharastra"})
+create(a5:state{name:"gujrat"})
+create(a6:state{name:"abcd"})
+create(a7:product{name:"oil",pecentage:67})
+create(a8:product{name:"sugarcane",pecentage:77})
+create(a9:product{name:"wine",pecentage:40})
+create(a1)<-[:state_of]-(a4)
+create(a1)<-[:state_of]-(a5)
+create(a2)<-[:state_of]-(a6)
+create(a4)-[:produce]->(a7)
+create(a5)-[:produce]->(a8)
+create(a6)-[:produce]->(a9)
+create(a1)-[:export]->(a7)
+create(a2)-[:export]->(a8)
+create(a2)-[:import]->(a7)
+create(a3)-[:import]->(a7)
+with a1,a2,a3,a4,a5,a6,a7,a8,a9
+MATCH (:product{ name:"oil"})<-[:export]-(cunt)
+RETURN cunt.name
+
+q2:
+create(a1:cunt{name:"india"})
+create(a2:cunt{name:"usa"})
+create(a3:cunt{name:"iraq"})
+create(a4:state{name:"maharastra"})
+create(a5:state{name:"gujrat"})
+create(a6:state{name:"abcd"})
+create(a7:product{name:"oil",pecentage:67})
+create(a8:product{name:"sugarcane",pecentage:77})
+create(a9:product{name:"wine",pecentage:40})
+create(a1)<-[:state_of]-(a4)
+create(a1)<-[:state_of]-(a5)
+create(a2)<-[:state_of]-(a6)
+create(a4)-[:produce]->(a7)
+create(a5)-[:produce]->(a8)
+create(a6)-[:produce]->(a9)
+create(a1)-[:export]->(a7)
+create(a2)-[:export]->(a8)
+create(a2)-[:import]->(a7)
+create(a3)-[:import]->(a7)
+with a1,a2,a3,a4,a5,a6,a7,a8,a9
+MATCH (:state{ name:"maharastra"})-[:produce]->(product)
+RETURN product.name
+
+
+q3
+create(a1:cunt{name:"india"})
+create(a2:cunt{name:"usa"})
+create(a3:cunt{name:"iraq"})
+create(a4:state{name:"maharastra"})
+create(a5:state{name:"gujrat"})
+create(a6:state{name:"abcd"})
+create(a7:product{name:"oil",pecentage:67})
+create(a8:product{name:"sugarcane",pecentage:77})
+create(a9:product{name:"wine",pecentage:40})
+create(a1)<-[:state_of]-(a4)
+create(a1)<-[:state_of]-(a5)
+create(a2)<-[:state_of]-(a6)
+create(a4)-[:produce]->(a7)
+create(a5)-[:produce]->(a8)
+create(a6)-[:produce]->(a9)
+create(a1)-[:export]->(a7)
+create(a2)-[:export]->(a8)
+create(a2)-[:import]->(a7)
+create(a3)-[:import]->(a7)
+with a1,a2,a3,a4,a5,a6,a7,a8,a9
+MATCH (:product{ name:"sugarcane"})<-[:produce]-(state)
+RETURN state.name
+
+q4:
+
+
+
+
+
+
+
+
+.txt
+slip13
+
+query 1:
+create(a1:cunt{name:"india"})
+create(a2:cunt{name:"usa"})
+create(a3:cunt{name:"iraq"})
+create(a4:state{name:"maharastra"})
+create(a5:state{name:"gujrat"})
+create(a6:state{name:"abcd"})
+create(a7:product{name:"oil",pecentage:67})
+create(a8:product{name:"sugarcane",pecentage:77})
+create(a9:product{name:"wine",pecentage:40})
+create(a1)<-[:state_of]-(a4)
+create(a1)<-[:state_of]-(a5)
+create(a2)<-[:state_of]-(a6)
+create(a4)-[:produce]->(a7)
+create(a5)-[:produce]->(a8)
+create(a6)-[:produce]->(a9)
+create(a1)-[:export]->(a7)
+create(a2)-[:export]->(a8)
+create(a2)-[:import]->(a7)
+create(a3)-[:import]->(a7)
+with a1,a2,a3,a4,a5,a6,a7,a8,a9
+MATCH (:product{ name:"oil"})<-[:export]-(cunt)
+RETURN cunt.name
+
+q2:
+create(a1:cunt{name:"india"})
+create(a2:cunt{name:"usa"})
+create(a3:cunt{name:"iraq"})
+create(a4:state{name:"maharastra"})
+create(a5:state{name:"gujrat"})
+create(a6:state{name:"abcd"})
+create(a7:product{name:"oil",pecentage:67})
+create(a8:product{name:"sugarcane",pecentage:77})
+create(a9:product{name:"wine",pecentage:40})
+create(a1)<-[:state_of]-(a4)
+create(a1)<-[:state_of]-(a5)
+create(a2)<-[:state_of]-(a6)
+create(a4)-[:produce]->(a7)
+create(a5)-[:produce]->(a8)
+create(a6)-[:produce]->(a9)
+create(a1)-[:export]->(a7)
+create(a2)-[:export]->(a8)
+create(a2)-[:import]->(a7)
+create(a3)-[:import]->(a7)
+with a1,a2,a3,a4,a5,a6,a7,a8,a9
+MATCH (:state{ name:"maharastra"})-[:produce]->(product)
+RETURN product.name
+
+
+q3
+create(a1:cunt{name:"india"})
+create(a2:cunt{name:"usa"})
+create(a3:cunt{name:"iraq"})
+create(a4:state{name:"maharastra"})
+create(a5:state{name:"gujrat"})
+create(a6:state{name:"abcd"})
+create(a7:product{name:"oil",pecentage:67})
+create(a8:product{name:"sugarcane",pecentage:77})
+create(a9:product{name:"wine",pecentage:40})
+create(a1)<-[:state_of]-(a4)
+create(a1)<-[:state_of]-(a5)
+create(a2)<-[:state_of]-(a6)
+create(a4)-[:produce]->(a7)
+create(a5)-[:produce]->(a8)
+create(a6)-[:produce]->(a9)
+create(a1)-[:export]->(a7)
+create(a2)-[:export]->(a8)
+create(a2)-[:import]->(a7)
+create(a3)-[:import]->(a7)
+with a1,a2,a3,a4,a5,a6,a7,a8,a9
+MATCH (:product{ name:"sugarcane"})<-[:produce]-(state)
+RETURN state.name
+
+q4:
+
+
+
+
+
+
+
+

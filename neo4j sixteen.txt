@@ -1,0 +1,91 @@
+neo4j/sixteen.scala
+slip16
+q1:
+create(a1:hotel{name:"sk",area:"camp_area",rate:4})
+create(a8:hotel{name:"sk1",area:"camp_area",rate:4})
+
+create(a2:hotel{name:"ibis",area:"kp",rate:5})
+create(a3:facility{name:"restro"})
+create(a4:facility{name:"lodge"})
+create(a1)-[:provides]->(a3)
+create(a2)-[:provides]->(a4)
+create(a5:hotel{name:"exin",area:"kp",rate:5})
+create(a5)-[:provides]->(a4)
+create(a5)-[:provides]->(a3)
+create(a6:person{name:"nikita"})
+create(a6)-[:rates]->(a1)
+create(a6)-[:rates]->(a2)
+create(a7:person{name:"rahul"})
+create(a6)-[:friend]->(a7)
+create(a7)-[:friend]->(a6)
+create(a6)-[:recommends]->(a7)
+create(a6)-[:reviews]->(a1)
+with a1,a2,a3,a4,a5,a6,a7,a8
+MATCH (hotel)
+WHERE hotel.area = 'camp_area'
+RETURN hotel.name
+
+q2:
+create(a1:hotel{name:"sk",area:"camp_area",rate:4})
+create(a8:hotel{name:"sk1",area:"camp_area",rate:4})
+
+create(a2:hotel{name:"ibis",area:"kp",rate:5})
+create(a3:facility{name:"restro"})
+create(a4:facility{name:"lodge"})
+create(a1)-[:provides]->(a3)
+create(a2)-[:provides]->(a4)
+create(a5:hotel{name:"exin",area:"kp",rate:5})
+create(a5)-[:provides]->(a4)
+create(a5)-[:provides]->(a3)
+create(a6:person{name:"nikita"})
+create(a6)-[:rates]->(a1)
+create(a6)-[:rates]->(a2)
+create(a7:person{name:"rahul"})
+create(a6)-[:friend]->(a7)
+create(a7)-[:friend]->(a6)
+create(a6)-[:recommends]->(a7)
+create(a6)-[:reviews]->(a1)
+with a1,a2,a3,a4,a5,a6,a7,a8
+match(:facility{name:'restro'})<-[:provides]-(hotel)-[:provides]->(:facility{name:'lodge'})
+return hotel.name
+
+
+q3:
+create(a1:hotel{name:"sk",area:"camp_area",rate:4})
+create(a8:hotel{name:"sk1",area:"camp_area",rate:4})
+
+create(a2:hotel{name:"ibis",area:"kp",rate:5})
+create(a3:facility{name:"restro"})
+create(a4:facility{name:"lodge"})
+create(a1)-[:provides]->(a3)
+create(a2)-[:provides]->(a4)
+create(a5:hotel{name:"exin",area:"kp",rate:5})
+create(a5)-[:provides]->(a4)
+create(a5)-[:provides]->(a3)
+create(a6:person{name:"nikita"})
+create(a6)-[:rates]->(a1)
+create(a6)-[:rates]->(a2)
+create(a7:person{name:"rahul"})
+create(a6)-[:friend]->(a7)
+create(a7)-[:friend]->(a6)
+create(a6)-[:recommends]->(a7)
+create(a6)-[:reviews]->(a1)
+with a1,a2,a3,a4,a5,a6,a7,a8
+MATCH (hotel)
+WHERE hotel.rate>=4
+RETURN hotel.name
+
+q4:
+
+
+
+
+
+
+
+
+
+
+
+
+

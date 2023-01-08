@@ -1,0 +1,71 @@
+neo4j
+slip19
+To create graph model----
+
+create(a1:industry{name:"automobiles",addr:"nsk",contactno:67643356})
+create(a2:heavy_vehicle{name:"truck",price:45000000})
+create(a3:light_vehicle{name:"bike",price:1000000})
+create(a4:customer{name:"Mr.raj",age:45})
+create(a5:customer{name:"Mr.ajay",age:56})
+create(a4)-[:buy]->(a2)
+create(a4)-[:buy]->(a3)
+create(a5)-[:buy]->(a2)
+create(a1)-[:manufacture]->(a2)
+create(a1)-[:manufacture]->(a3)
+create(a4)-[:recommend]->(a2)
+create(a5)-[:recommend]->(a2)
+create(a4)-[:recommend]->(a3)
+return a1,a2,a3,a4,a5
+
+1.create(a1:industry{name:"automobiles",addr:"nsk",contactno:67643356})
+create(a2:heavy_vehicle{name:"truck",price:45000000})
+create(a3:light_vehicle{name:"bike",price:1000000})
+create(a4:customer{name:"Mr.raj",age:45})
+create(a5:customer{name:"Mr.ajay",age:56})
+create(a4)-[:buy]->(a2)
+create(a4)-[:buy]->(a3)
+create(a5)-[:buy]->(a2)
+create(a1)-[:manufacture]->(a2)
+create(a1)-[:manufacture]->(a3)
+create(a4)-[:recommend]->(a2)
+create(a5)-[:recommend]->(a2)
+create(a4)-[:recommend]->(a3)
+with a1,a2,a3,a4,a5
+match(heavy_vehicle)
+where heavy_vehicle.name='truck'
+RETURN heavy_vehicle.price,heavy_vehicle.name
+
+2.create(a1:industry{name:"automobiles",addr:"nsk",contactno:67643356})
+create(a2:heavy_vehicle{name:"truck",price:45000000})
+create(a3:light_vehicle{name:"bike",price:1000000})
+create(a4:customer{name:"Mr.raj",age:45})
+create(a5:customer{name:"Mr.ajay",age:56})
+create(a4)-[:buy]->(a2)
+create(a4)-[:buy]->(a3)
+create(a5)-[:buy]->(a2)
+create(a1)-[:manufacture]->(a2)
+create(a1)-[:manufacture]->(a3)
+create(a4)-[:recommend]->(a2)
+create(a5)-[:recommend]->(a2)
+create(a4)-[:recommend]->(a3)
+with a1,a2,a3,a4,a5
+MATCH(:light_vehicle{name:"bike"})<-[:buy]-(customer)
+RETURN customer.name
+
+
+3.create(a1:industry{name:"automobiles",addr:"nsk",contactno:67643356})
+create(a2:heavy_vehicle{name:"truck",price:45000000})
+create(a3:light_vehicle{name:"bike",price:1000000})
+create(a4:customer{name:"Mr.raj",age:45})
+create(a5:customer{name:"Mr.ajay",age:56})
+create(a4)-[:buy]->(a2)
+create(a4)-[:buy]->(a3)
+create(a5)-[:buy]->(a2)
+create(a1)-[:manufacture]->(a2)
+create(a1)-[:manufacture]->(a3)
+create(a4)-[:recommend]->(a2)
+create(a5)-[:recommend]->(a2)
+create(a4)-[:recommend]->(a3)
+with a1,a2,a3,a4,a5
+match(:heavy_vehicle{name:'truck'})<-[:buy]-(customer)-[:buy]->(:light_vehicle{name:'bike'})
+return customer.name
