@@ -1,0 +1,6 @@
+J = {0, 2, 4, 6, 8}
+G = {1, 2, 3, 4, 5}
+print("union of J and G",J|G)
+print("intersection of J and G",J&G)
+print("difference of J and G",J-G)
+print("symmetric difference of J and G",J^G)
